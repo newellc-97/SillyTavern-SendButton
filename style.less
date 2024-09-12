@@ -1,0 +1,129 @@
+#rightSendForm > #send_but:has(.stsb--menu) {
+	opacity: 1;
+}
+.stsb--button {
+	position: relative;
+}
+.stsb--badge {
+	--color: var(--SmartThemeBodyColor);
+	--bg: var(--SmartThemeEmColor);
+	color: var(--color);
+	pointer-events: none;
+	background-color: var(--bg);
+	border-radius: 4px;
+	backdrop-filter: drop-shadow(2px 4px 6px black);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 0.25em;
+	font-family: var(--mainFontFamily);
+	&.fa-solid {
+		font-family: "Font Awesome 6 Free";
+	}
+	font-weight: normal;
+	padding: 0.25em;
+	white-space: nowrap;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.stsb--menu {
+	filter: drop-shadow(1px 1px 2px var(--black50a));
+	z-index: 30000;
+	overflow-x: clip;
+	overflow-y: auto;
+	border-radius: 10px;
+	aspect-ratio: unset;
+	padding: 5px 0 5px 5px;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--secondaryBg, var(--SmartThemeBlurTintColor));
+
+	position: absolute;
+	bottom: 100%;
+	right: 0;
+	max-height: calc(50dvh);
+	max-width: unset;
+	// width: calc((100vw - var(--sheldWidth)) / 2);
+	// transition: calc(1ms * var(--stcdx--transitionTime));
+	transition: 200ms;
+	transform-origin: bottom right;
+	scale: 0;
+	font-size: 1rem;
+	font-family: var(--mainFontFamily);
+	font-weight: normal;
+	color: var(--SmartThemeBodyColor);
+	&.stsb--active {
+		scale: 1;
+	}
+
+	.stsb--item {
+		padding: 0.25em 0 0.25em 0.25em;
+		background-color: rgb(255 255 255 / 0);
+		cursor: pointer;
+		display: flex;
+		gap: 0.5em;
+		align-items: center;
+		transform: translateX(0);
+		&.stsb--current {
+			font-weight: bold;
+		}
+
+		.stsb--icon {
+			flex: 0 0 auto;
+			cursor: pointer;
+			font-size: var(--bottomFormIconSize);
+			width: 1.25em;
+			text-align: center;
+			transition: 200ms;
+			opacity: 0.5;
+			&:hover {
+				opacity: 1;
+				background-color: rgb(255 255 255 / 0.0625);
+			}
+		}
+		.stsb--label {
+			flex: 1 1 auto;
+			cursor: pointer;
+			transition: 200ms;
+			opacity: 0.5;
+			&:hover {
+				opacity: 1;
+				background-color: rgb(255 255 255 / 0.0625);
+			}
+		}
+	}
+}
+
+
+#stsb--settings {
+	.stsb--btnList {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.stsb--item {
+		display: flex;
+		gap: 1em;
+	}
+
+	.stsb--button {
+		order: unset !important;
+		font-size: 2em;
+		position: relative;
+		align-self: start;
+	}
+
+	.stsb--content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	.stsb--wrap {
+		display: flex;
+		gap: 0.5em;
+	}
+}
