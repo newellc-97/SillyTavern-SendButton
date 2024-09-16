@@ -1,5 +1,5 @@
 import { delay } from '../../../utils.js';
-import { waitForFrame } from '../SillyTavern-FileExplorer/lib/wait.js';
+import { waitForFrame } from './src/lib/wait.js';
 import { Settings } from './src/Settings.js';
 
 export const settings = new Settings();
