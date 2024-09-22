@@ -83,6 +83,8 @@
 .stsb--menu .stsb--item .stsb--label {
   flex: 1 1 auto;
   cursor: pointer;
+  line-height: 1.8;
+  text-align: right;
   transition: 200ms;
   opacity: 0.5;
 }
