@@ -70,6 +70,7 @@ export const showMenu = async()=>{
                         await hideMenu();
                         settings.buttonId = null;
                         updateBtn();
+                        settings.save();
                     });
                     item.append(lbl);
                 }
@@ -120,6 +121,7 @@ export const showMenu = async()=>{
                         await hideMenu();
                         settings.buttonId = sb.id;
                         updateBtn();
+                        settings.save();
                     });
                     item.append(lbl);
                 }
