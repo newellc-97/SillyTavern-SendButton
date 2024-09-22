@@ -12,6 +12,7 @@ originalBtn.addEventListener('contextmenu', (evt)=>{
     evt.stopImmediatePropagation();
     showMenu();
 });
+const ta = /**@type {HTMLTextAreaElement}*/(document.querySelector('#send_textarea'));
 
 export const updateBtn = ()=>{
     const btn = settings.button ? settings.button.render() : originalBtn;
@@ -146,7 +147,7 @@ export const showMenu = async()=>{
 };
 
 document.querySelector('#send_textarea').addEventListener('keydown', (/**@type {KeyboardEvent}*/evt)=>{
-    if (evt.key == 'Enter' && !evt.ctrlKey && !evt.altKey && !evt.shiftKey && settings.button) {
+    if (evt.key == 'Enter' && !evt.ctrlKey && !evt.altKey && !evt.shiftKey && settings.button && (settings.button.trapScript || ta.value[0] != '/')) {
         evt.preventDefault();
         evt.stopPropagation();
         evt.stopImmediatePropagation();

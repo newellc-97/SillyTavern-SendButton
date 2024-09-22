@@ -263,6 +263,26 @@ export class Settings {
                         }
                         wrap.append(badgeBackground);
                     }
+                    // trapScript
+                    const trapScript = document.createElement('div'); {
+                        trapScript.classList.add('stsb--setting');
+                        const lbl = document.createElement('div'); {
+                            lbl.classList.add('stsb--label');
+                            lbl.textContent = 'Trap Script';
+                            trapScript.append(lbl);
+                        }
+                        const inp = document.createElement('input'); {
+                            inp.classList.add('text_pole');
+                            inp.type = 'checkbox';
+                            inp.checked = item.trapScript ?? false;
+                            inp.addEventListener('click', ()=>{
+                                item.trapScript = inp.checked;
+                                updatePreviewDebounced();
+                            });
+                            trapScript.append(inp);
+                        }
+                        wrap.append(trapScript);
+                    }
                     cont.append(wrap);
                 }
                 // cmd

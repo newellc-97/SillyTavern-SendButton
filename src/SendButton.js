@@ -18,6 +18,7 @@ export class SendButton {
     /**@type {string} */ badgeColor = 'white';
     /**@type {string} */ badgeBackground = 'orange';
     /**@type {string} */ title;
+    /**@type {boolean} */ trapScript = false;
 
     dom = {
         /**@type {HTMLElement} */
@@ -35,6 +36,7 @@ export class SendButton {
             badgeColor: this.badgeColor,
             badgeBackground: this.badgeBackground,
             title: this.title,
+            trapScript: this.trapScript,
         };
     }
 
