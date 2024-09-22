@@ -150,6 +150,8 @@ document.querySelector('#send_textarea').addEventListener('keydown', (/**@type {
         evt.preventDefault();
         evt.stopPropagation();
         evt.stopImmediatePropagation();
-        settings.button.execute();
+        if (ta.value.length > 0) {
+            settings.button.execute();
+        }
     }
 });
