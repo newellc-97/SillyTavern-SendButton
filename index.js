@@ -35,9 +35,29 @@ export const showMenu = async()=>{
     }
     menu = document.createElement('div'); {
         menu.classList.add('stsb--menu');
+        menu.addEventListener('pointerdown', (evt)=>{
+            evt.preventDefault();
+            evt.stopPropagation();
+            evt.stopImmediatePropagation();
+        });
+        menu.addEventListener('click', (evt)=>{
+            evt.preventDefault();
+            evt.stopPropagation();
+            evt.stopImmediatePropagation();
+        });
+        menu.addEventListener('pointerup', (evt)=>{
+            evt.preventDefault();
+            evt.stopPropagation();
+            evt.stopImmediatePropagation();
+        });
         if (settings.buttonId !== null) {
             const item = document.createElement('div'); {
                 item.classList.add('stsb--item');
+                item.addEventListener('pointerdown', (evt)=>{
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    evt.stopImmediatePropagation();
+                });
                 const lbl = document.createElement('div'); {
                     lbl.classList.add('stsb--label');
                     lbl.textContent = originalBtn.title;
@@ -73,6 +93,21 @@ export const showMenu = async()=>{
             if (sb == settings.button) continue;
             const item = document.createElement('div'); {
                 item.classList.add('stsb--item');
+                item.addEventListener('pointerdown', (evt)=>{
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    evt.stopImmediatePropagation();
+                });
+                item.addEventListener('click', (evt)=>{
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    evt.stopImmediatePropagation();
+                });
+                item.addEventListener('pointerup', (evt)=>{
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    evt.stopImmediatePropagation();
+                });
                 const lbl = document.createElement('div'); {
                     lbl.classList.add('stsb--label');
                     lbl.textContent = sb.title;
