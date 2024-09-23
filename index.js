@@ -154,7 +154,12 @@ document.querySelector('#send_textarea').addEventListener('keydown', (/**@type {
         evt.stopPropagation();
         evt.stopImmediatePropagation();
         if (ta.value.length > 0) {
-            settings.button.execute();
+            const input = ta.value;
+            if (settings.button.clearInput) {
+                ta.value = '';
+                ta.dispatchEvent(new Event('input', { bubbles:true }));
+            }
+            settings.button.execute(input);
         }
     }
 });

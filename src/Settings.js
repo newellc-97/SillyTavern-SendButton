@@ -283,6 +283,26 @@ export class Settings {
                         }
                         wrap.append(trapScript);
                     }
+                    // clearInput
+                    const clearInput = document.createElement('div'); {
+                        clearInput.classList.add('stsb--setting');
+                        const lbl = document.createElement('div'); {
+                            lbl.classList.add('stsb--label');
+                            lbl.textContent = 'Clear Input';
+                            clearInput.append(lbl);
+                        }
+                        const inp = document.createElement('input'); {
+                            inp.classList.add('text_pole');
+                            inp.type = 'checkbox';
+                            inp.checked = item.clearInput ?? false;
+                            inp.addEventListener('click', ()=>{
+                                item.clearInput = inp.checked;
+                                updatePreviewDebounced();
+                            });
+                            clearInput.append(inp);
+                        }
+                        wrap.append(clearInput);
+                    }
                     cont.append(wrap);
                 }
                 // cmd
@@ -297,7 +317,7 @@ export class Settings {
                         inp.classList.add('text_pole');
                         inp.classList.add('monospace');
                         inp.value = item.command ?? '';
-                        inp.placeholder = '/send {{input}} | /trigger';
+                        inp.placeholder = '/send {{var::input}} | /trigger';
                         inp.addEventListener('input', ()=>{
                             item.command = inp.value;
                             this.save();

@@ -1,4 +1,5 @@
 import { executeSlashCommandsOnChatInput } from '../../../../slash-commands.js';
+import { SlashCommandScope } from '../../../../slash-commands/SlashCommandScope.js';
 import { uuidv4 } from '../../../../utils.js';
 import { showMenu } from '../index.js';
 
@@ -19,6 +20,7 @@ export class SendButton {
     /**@type {string} */ badgeBackground = 'orange';
     /**@type {string} */ title;
     /**@type {boolean} */ trapScript = false;
+    /**@type {boolean} */ clearInput = true;
 
     dom = {
         /**@type {HTMLElement} */
@@ -89,7 +91,9 @@ export class SendButton {
         this.dom.root.replaceWith(...nodes);
     }
 
-    execute() {
-        executeSlashCommandsOnChatInput(this.command);
+    execute(input) {
+        const scope = new SlashCommandScope();
+        scope.letVariable('input', input);
+        executeSlashCommandsOnChatInput(this.command, { scope });
     }
 }
