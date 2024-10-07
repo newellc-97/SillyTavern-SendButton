@@ -8,7 +8,7 @@ export class Settings {
     /**@type {SendButton[]} */ buttonList = [
         SendButton.from({
             id: '1',
-            command: '/echo {{input}}',
+            command: '/echo test',
             icon: 'fa-paper-plane',
             color: 'red',
             badge: 'fa-paper-plane',
